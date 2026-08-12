@@ -1,75 +1,121 @@
-# React + TypeScript + Vite
+# Movie Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Movie Explorer application built with React and TypeScript. The application integrates with a movie API to allow users to discover movies, search by title, filter by genre, sort by rating, view movie details, and manage favorite movies.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://Santoshm15.github.io/movie-explorer-application/
 
-## React Compiler
+## GitHub Repository
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+https://github.com/Santoshm15/movie-explorer-application
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Home page with application introduction and featured movies
+- Search movies by title
+- Browse popular movies
+- Filter movies by genre
+- Sort movies by rating:
+  - High to Low
+  - Low to High
+- View movie details
+- Add movies to Favorites
+- Remove movies from Favorites
+- Loading state
+- Error state
+- Empty-results state
+- Responsive design
+- React Router navigation
+- TypeScript interfaces and typed props, state, events, and functions
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Pages
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 1. Home
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The Home page contains:
 
-```
+- Application title
+- Short description
+- Search bar
+- Explore Movies button
+- Featured movie cards
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Movies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The Movies page contains:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Movie search
+- Genre filter
+- Rating sorting
+- Movie cards
+- Loading and error handling
+- Empty-results handling
 
+### 3. Movie Details
+
+The Movie Details page displays:
+
+- Movie poster
+- Movie title
+- Overview
+- Release date
+- Rating
+- Genres
+- Runtime
+- Popularity
+- Back to Movies button
+- Add/Remove Favorite action
+
+### 4. Favorites
+
+The Favorites page displays saved movies with:
+
+- Poster
+- Title
+- Rating
+- Remove from Favorites button
+
+When there are no favorites, the page displays:
+
+`No favorite movies added.`
+
+## Technologies Used
+
+- React
+- TypeScript
+- Vite
+- React Router
+- RapidAPI IMDb API
+- CSS
+- GitHub Pages
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── Navbar.tsx
+│   ├── MovieCard.tsx
+│   ├── MovieGrid.tsx
+│   ├── SearchBar.tsx
+│   ├── Filter.tsx
+│   ├── Loader.tsx
+│   └── ErrorMessage.tsx
+│
+├── pages/
+│   ├── Home.tsx
+│   ├── Movies.tsx
+│   ├── MovieDetails.tsx
+│   └── Favorites.tsx
+│
+├── types/
+│   └── Movie.ts
+│
+├── services/
+│   └── movieApi.ts
+│
+├── App.tsx
+├── main.tsx
+└── index.css
 ```
